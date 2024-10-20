@@ -1,0 +1,188 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Bootstrap Demo</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+</head>
+
+<style>
+  body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+
+  .navbar-brand img {
+    height: 40px;
+    width: auto;
+    margin-right: 10px;
+  }
+
+  .carousel-item img {
+    object-fit: cover;
+    height: 400px;
+  }
+
+  @media (max-width: 768px) {
+    .carousel-item img {
+      height: 200px;
+    }
+  }
+
+  footer {
+    background-color: #121314;
+    color: #ffffff;
+    flex-shrink: 0;
+    padding: 20px 0;
+  }
+
+  .container_footer {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+    height: 200px;
+  }
+
+  .maincontent {
+    flex-grow: 1;
+    height: 400px;
+    width: auto;
+  }
+
+  .navbar-toggler {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    z-index: 1050;
+  }
+
+  @media (max-width: 991.98px) {
+    .navbar-collapse {
+      position: fixed;
+      top: 0;
+      right: -100%;
+      bottom: 0;
+      width: 300px;
+      padding: 1rem;
+      background-color: #f8f9fa;
+      z-index: 1040;
+      transition: right 0.3s ease;
+      overflow-y: auto;
+    }
+
+    .navbar-collapse.show {
+      right: 0;
+    }
+
+    .navbar-nav {
+      flex-direction: column;
+    }
+
+    .navbar-nav .nav-item {
+      margin-bottom: 10px;
+    }
+  }
+</style>
+
+<body>
+
+  <nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">
+        <img src="logo.jpg" alt="Helthopedia Logo"> Helthopedia
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#"><button type="button"
+                class="btn btn-outline-primary">Home</button></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#"><button type="button" class="btn btn-outline-primary">Your profile</button></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#"><button type="button" class="btn btn-outline-primary">Settings</button></a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Signin/SignUP
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="#"><button type="button" class="btn btn-info">Signin</button></a></li>
+              <li><a class="dropdown-item" href="#"><button type="button" class="btn btn-info">Sign up</button></a></li>
+            </ul>
+          </li>
+        </ul>
+        <form class="d-flex" role="search">
+          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-success" type="submit">Search</button>
+        </form>
+      </div>
+    </div>
+  </nav>
+
+  <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="https://images.unsplash.com/photo-1527913620272-dcd2b81e6ce1?q=80&w=1964&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+          class="d-block w-100" alt="...">
+      </div>
+      <div class="carousel-item">
+        <img src="https://plus.unsplash.com/premium_photo-1663089888983-67e6d75ecf9a?q=80&w=1770&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+          class="d-block w-100" alt="...">
+      </div>
+      <div class="carousel-item">
+        <img src="https://images.unsplash.com/photo-1549060279-7e168fcee0c2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80"
+          class="d-block w-100" alt="...">
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+
+  <div class="maincontent">]
+    
+  </div>
+
+  <footer class="bg-dark text-light pt-5">
+    <div class="container_footer">
+      <div class="row">
+        <div class="col-6 col-md-4">
+          <h3 class="fw-bold">Coding Yaar</h3>
+          <p class="pt-2">321, Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+          <p class="mb-2">0987654321</p>
+          <p>1234567890</p>
+        </div>
+        <div class="col">
+          <h4>Menu</h4>
+          <ul class="list-unstyled pt-2">
+            <li class="py-1">Home</li>
+            <li class="py-1">Shorts</li>
+            <li class="py-1">About</li>
+            <li class="py-1">Contact</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</body>
+
+</html>
