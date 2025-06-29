@@ -1,0 +1,62 @@
+{% extends 'accounts/base.html' %}
+{% block content %}
+<div class="signup-form">
+    <h2>Sign Up</h2>
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <div class="form-group">
+            {{ user_form.username.label_tag }}
+            {{ user_form.username }}
+        </div>
+        <div class="form-group">
+            {{ user_form.email.label_tag }}
+            {{ user_form.email }}
+        </div>
+        <div class="form-group">
+            {{ user_form.first_name.label_tag }}
+            {{ user_form.first_name }}
+        </div>
+        <div class="form-group">
+            {{ user_form.last_name.label_tag }}
+            {{ user_form.last_name }}
+        </div>
+        <div class="form-group">
+            {{ user_form.profile_picture.label_tag }}
+            {{ user_form.profile_picture }}
+        </div>
+        <div class="form-group">
+            {{ user_form.user_type.label_tag }}
+            {{ user_form.user_type }}
+        </div>
+        <div class="form-group">
+            {{ user_form.password1.label_tag }}
+            {{ user_form.password1 }}
+        </div>
+        <div class="form-group">
+            {{ user_form.password2.label_tag }}
+            {{ user_form.password2 }}
+            {% if user_form.password2.errors %}
+                <div class="error">{{ user_form.password2.errors }}</div>
+            {% endif %}
+        </div>
+        <h3>Address</h3>
+        <div class="form-group">
+            {{ address_form.line1.label_tag }}
+            {{ address_form.line1 }}
+        </div>
+        <div class="form-group">
+            {{ address_form.city.label_tag }}
+            {{ address_form.city }}
+        </div>
+        <div class="form-group">
+            {{ address_form.state.label_tag }}
+            {{ address_form.state }}
+        </div>
+        <div class="form-group">
+            {{ address_form.pincode.label_tag }}
+            {{ address_form.pincode }}
+        </div>
+        <button type="submit">Sign Up</button>
+    </form>
+</div>
+{% endblock %}

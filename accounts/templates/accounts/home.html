@@ -1,0 +1,35 @@
+{% extends 'accounts/base.html' %}
+{% load static %}
+{% block content %}
+<div class="home-page">
+    <div class="hero-section">
+        <div class="slider">
+            <img src="{% static 'accounts/images/slider1.jpg' %}" class="slide" alt="Hospital Exterior">
+            <img src="{% static 'accounts/images/slider2.jpg' %}" class="slide" alt="Modern Medical Room">
+            <img src="{% static 'accounts/images/slider3.jpg' %}" class="slide" alt="Doctors Team">
+        </div>
+
+        <div class="facility-section">
+            <div class="facility-box">
+                <h3>Emergency Services</h3>
+                <p>24/7 emergency response with advanced trauma care units.</p>
+            </div>
+            <div class="facility-box">
+                <h3>Operation Theatres</h3>
+                <p>Fully equipped modular operation theatres with sterile tech.</p>
+            </div>
+            <div class="facility-box">
+                <h3>Diagnostics</h3>
+                <p>High-end lab & imaging: MRI, CT, ECG, and more.</p>
+            </div>
+            <div class="facility-box">
+                <h3>Pharmacy</h3>
+                <p>In-house pharmacy available round the clock.</p>
+            </div>
+        </div>
+    </div>
+
+
+
+</div>
+{% endblock %}

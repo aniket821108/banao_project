@@ -1,0 +1,32 @@
+{% extends 'accounts/base.html' %}
+{% load static %}
+
+{% block content %}
+<section class="about-section">
+    <div class="about-container">
+        <h1>About Our Hospital</h1>
+        <p>We are a state-of-the-art healthcare facility committed to providing excellent medical services with a human touch. Our mission is to make quality healthcare accessible to everyone.</p>
+
+        <div class="about-stats">
+            <div class="stat-box">
+                <h2>150+</h2>
+                <p>Qualified Doctors</p>
+            </div>
+            <div class="stat-box">
+                <h2>500+</h2>
+                <p>Hospital Beds</p>
+            </div>
+            <div class="stat-box">
+                <h2>24/7</h2>
+                <p>Emergency Support</p>
+            </div>
+            <div class="stat-box">
+                <h2>20+</h2>
+                <p>Specialized Departments</p>
+            </div>
+        </div>
+
+        <img src="{% static 'accounts/images/slider3.jpg' %}" alt="Hospital Image" class="about-image">
+    </div>
+</section>
+{% endblock %}

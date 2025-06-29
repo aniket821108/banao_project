@@ -1,0 +1,61 @@
+<!-- accounts/templates/accounts/base.html -->
+{% load static %} <!-- Add this line at the very top -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medical Auth System</title>
+    <link rel="stylesheet" href="{% static 'accounts/css/style.css' %}">
+    <script></script>
+</head>
+
+<body>
+    <nav>
+        <div class="logo"><img src="{% static 'accounts/images/logo.png' %}" alt="Logo">
+        </div>
+        <div class="nav-links">
+            <a href="{% url 'home' %}">Home</a>
+            <a href="{% url 'aboutus' %}">AboutUs</a>
+        </div>
+        {% if user.is_authenticated %}
+        <div class="dash-logout"><a
+            href="{% if user.user_type == 'P' %}{% url 'patient_dashboard' %}{% else %}{% url 'doctor_dashboard' %}{% endif %}">Dashboard</a>
+        <a href="{% url 'logout' %}">Logout</a></div> <!-- This now works -->
+        {% else %}
+
+        <div class="login-signup"> <a href="{% url 'login' %}">Login</a>
+            <a href="{% url 'signup' %}">Sign Up</a>
+        </div>
+        {% endif %}
+    </nav>
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+   
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            let slideIndex = 0;
+            const slides = document.querySelectorAll(".slide");
+        
+            function showSlides() {
+                slides.forEach((slide) => {
+                    slide.style.display = "none";
+                });
+        
+                slideIndex++;
+                if (slideIndex > slides.length) { slideIndex = 1; }
+        
+                slides[slideIndex - 1].style.display = "block";
+                setTimeout(showSlides, 3000); // Change image every 3s
+            }
+        
+            showSlides();
+        });
+        </script>
+        
+
+</body>
+
+</html>
